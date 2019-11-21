@@ -1,0 +1,45 @@
+//- headers.pug
+extends layout/_base
+
+prepend head
+  - var title = 'Uni-Blocks - Headers';
+
+append styles
+  style.
+    .uni-block {
+      border-bottom: solid 1px #eee;
+    }
+
+append content
+  include includes/headers/_1
+  include includes/headers/_2
+  include includes/headers/_3
+  include includes/headers/_4
+  include includes/headers/_5
+  include includes/headers/_6
+  include includes/headers/_7
+  include includes/headers/_8
+  include includes/headers/_9
+  include includes/headers/_10
+  include includes/headers/_11
+  include includes/headers/_12
+  include includes/headers/_13
+  include includes/headers/_14
+  include includes/headers/_15
+  include includes/headers/_16
+  include includes/headers/_17
+  include includes/headers/_18
+  include includes/headers/_19
+  include includes/headers/_20
+
+append scripts
+  script(defer
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous")
+  script(defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
+  script(defer
+    src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous")

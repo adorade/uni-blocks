@@ -1,0 +1,30 @@
+//- includes/headers/_5.pug
+// header-5
+header#header-5
+  .container
+    nav.navbar.navbar-expand-md.no-gutters
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+
+      .col-4.col-md-2.text-right.text-md-center.order-lg-6
+        a(href="#!")
+          img(src="./images/img_logo.png" height="30" alt="image")
+
+      .collapse.navbar-collapse.col-12.col-md-5.order-lg-1#navbarNav2
+        ul.navbar-nav.col-5
+          li.nav-item.active
+            a.nav-link(href="#!") Home #[span.sr-only (current)]
+          li.nav-item
+            a.nav-link(href="#!") Features
+          li.nav-item
+            a.nav-link(href="#!") Pricing
+          li.nav-item
+            a.nav-link(href="#!") Team
+
+      ul.navbar-nav.justify-content-end.col-sm-5.order-lg-12.d-none.d-md-flex
+        li.nav-item
+          a.nav-link(href="#!"): i.fa.fa-twitter
+        li.nav-item
+          a.nav-link(href="#!"): i.fa.fa-github
+        li.nav-item
+          a.nav-link(href="#!"): i.fa.fa-slack

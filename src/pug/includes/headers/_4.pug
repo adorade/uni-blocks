@@ -1,0 +1,31 @@
+//- includes/headers/_4.pug
+// header-4
+header#header-4
+  .container
+    nav.navbar.navbar-expand-md
+      a.navbar-brand(href="#!")
+        img(src="./images/img_logo.png" height="30" alt="image")
+
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+
+      .collapse.navbar-collapse#navbarNav1
+        ul.navbar-nav.mr-auto
+          li.nav-item.active
+            a.nav-link(href="#!") Home #[span.sr-only (current)]
+          li.nav-item
+            a.nav-link(href="#!") Features
+          li.nav-item
+            a.nav-link(href="#!") Pricing
+          li.nav-item
+            a.nav-link(href="#!") Team
+
+        ul.navbar-nav.justify-content-end.d-none.d-lg-flex.ml-md-auto
+          li.nav-item
+            a.nav-link(href="#!"): i.fa.fa-slack
+          li.nav-item
+            a.nav-link(href="#!"): i.fa.fa-twitter
+          li.nav-item
+            a.nav-link(href="#!"): i.fa.fa-github
+
+        a.btn.btn-empty.ml-md-3(href="#!") Button

@@ -1,0 +1,31 @@
+//- includes/headers/_20.pug
+// header-20
+header.bg-dark#header-20
+  .container
+    nav.navbar.navbar-expand-md.no-gutters
+      .col-3.text-left
+        a(href="#!")
+          img(src="./images/img_logo.png" height="30" alt="image")
+
+      button.navbar-toggler(type="button" data-toggle="collapse" data-target=".navbar-collapse-4" aria-controls="navbarNav15" aria-expanded="false" aria-label="Toggle navigation")
+        span.navbar-toggler-icon
+
+      .collapse.navbar-collapse.navbar-collapse-4.justify-content-center.col-md-6#navbarNav15
+        ul.navbar-nav.justify-content-center
+          li.nav-item.active
+            a.nav-link(href="#!") Home #[span.sr-only (current)]
+          li.nav-item
+            a.nav-link(href="#!") Features
+          li.nav-item
+            a.nav-link(href="#!") Pricing
+          li.nav-item
+            a.nav-link(href="#!") Team
+          li.nav-item
+            a.nav-link(href="#!") Contact
+
+      .collapse.navbar-collapse.navbar-collapse-4
+        ul.navbar-nav.ml-auto.justify-content-end
+          li.nav-item
+            a.nav-link(href="#!") Log In
+
+        a.btn.ml-md-3(href="#!") Register

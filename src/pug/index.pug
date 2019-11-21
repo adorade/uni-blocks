@@ -1,0 +1,84 @@
+//- index.pug
+extends layout/_base
+
+prepend head
+  - var title = 'Uni-Blocks - Get started';
+
+append styles
+  style.
+    #navigator {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    #navigator a {
+      font-size: 14px;
+    }
+
+    #navigator + section {
+      padding: 250px 0;
+    }
+
+append content
+  section.uni-block(style="background-image: url(images/alt_wide_1.svg);")
+    .container
+      .row.justify-content-start
+        .col-8.text-left
+          h1 Uni-Blocks
+          p.text-h3 Responsive design blocks ready to be used in your web or mobile apps. All blocks are based on the Bootstrap Library, and they are the building blocks for beautiful websites.
+          p.mt-5
+            a.btn.btn-black(href="https://github.com/adorade/uni-blocks") #[i.fa.fa-github.mr-2] Github Docs
+            a.btn(href="https://blocks.adorade.ro/#playground") #[i.fa.fa-external-link.mr-2] Official Website
+
+  section.uni-block.p-2#navigator
+    .container-fluid
+      p.m-0.text-center
+        a.btn.btn-empty.m-1(href="call_to_action.html") Call to action
+        a.btn.btn-empty.m-1(href="contacts.html") Contacts
+        a.btn.btn-empty.m-1(href="contents.html") Contents
+        a.btn.btn-empty.m-1(href="features.html") Features
+        a.btn.btn-empty.m-1(href="footers.html") Footers
+        a.btn.btn-empty.m-1(href="forms.html") Forms
+        a.btn.btn-empty.m-1(href="headers.html") Headers
+        a.btn.btn-empty.m-1(href="pricings.html") Pricings
+        a.btn.btn-empty.m-1(href="teams.html") Teams
+        a.btn.btn-empty.m-1(href="testimonials.html") Testimonials
+
+  #playground
+
+block footer
+  include modules/_footer
+
+append scripts
+  script.
+    var get = function (url, callback) {
+      var xhr = new XMLHttpRequest();
+
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          var txt = xhr.responseText;
+          txt = txt.split('<body>')[1].split('</body>')[0];
+          callback(txt);
+        }
+      }
+
+      xhr.open("GET", url, false );
+      xhr.send();
+    }
+
+    var chooseBlock = function (e) {
+      e.preventDefault();
+
+      get(this.href, function (resp) {
+        document.querySelector('#playground').innerHTML = resp;
+      })
+    }
+
+    var els = document.querySelectorAll('#navigator a');
+
+    for (var i = 0; i < els.length; i++) {
+      var el = els[i];
+
+      el.addEventListener('click', chooseBlock);
+    }
