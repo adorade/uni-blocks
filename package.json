@@ -4,6 +4,7 @@
   "description": "Building design blocks for beautiful websites or mobile apps",
   "main": "dist/index.html",
   "scripts": {
+    "verify": "node -v && npm -v && yarn -v && git --version && gulp -v",
     "start": "gulp",
     "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
