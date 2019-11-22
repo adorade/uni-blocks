@@ -1,0 +1,12 @@
+//
+// Table
+// =============================================================================
+// stylelint-disable selector-no-qualifying-type, selector-max-type,selector-list-comma-newline-after
+
+table {
+  tr.no-border {
+    th, td {
+      border-top: 0;
+    }
+  }
+}

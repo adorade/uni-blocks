@@ -1,0 +1,13 @@
+//
+// Background
+// =============================================================================
+
+.bg-dark {
+  background-color: #2d313c;
+  color: mix($black, $white, 5%);
+}
+
+.bg-gray {
+  background-color: #fafafa;
+  color: $font-color;
+}

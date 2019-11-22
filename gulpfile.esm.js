@@ -4,75 +4,79 @@
  * Licensed under MIT
  * ========================================================================== */
 
-const { src, dest, watch, parallel, series } = require('gulp');
-const pug = require('gulp-pug');
-const sass = require('gulp-sass');
-const bs = require('browser-sync').create();
-const del = require('del');
-const log = require('fancy-log');
-const { green, magenta } = require('ansi-colors');
+import { series } from './tools/util';
+import {
+  checks, clean, cleanStyles, lintSCSS, compile, minifyCSS, cleanScripts, lintJS, copyJS,
+  cleanPages, lintPages, pagile, cleanImages, imagine, serve
+} from './tools';
 
-const optsWatch = {
-  delay: 2000
-};
+/**
+ * Check dirs, paths, options and settings
+ * -------------------------------------------------------------------------- */
+export { checks };
 
-export function clean () {
-  log(`${green('-> Clean all files')} in ${magenta('dist')} folder`);
+/**
+ * Clean - clean all files from 'dist' folder
+ * -------------------------------------------------------------------------- */
+export {  clean };
 
-  return del('dist');
-}
+/**
+ * Styles - processes style files
+ * -------------------------------------------------------------------------- */
+const styles = series(lintSCSS, compile, minifyCSS);
+export const buildStyles = series(cleanStyles, styles);
+buildStyles.displayName = 'build:styles';
+buildStyles.description = 'Build only styles files';
 
-export function styles () {
-  log(`${green('-> Compiling SCSS...')}`);
+/**
+ * Scripts - processes script files
+ * -------------------------------------------------------------------------- */
+const scripts = series(lintJS, copyJS);
+export const buildScripts = series(cleanScripts, scripts);
+buildScripts.displayName = 'build:scripts';
+buildScripts.description = 'Build only scripts files';
 
-  return src(['src/scss/uni_blocks.scss'])
-    .pipe(sass())
-    .pipe(dest('dist/css'))
-    .pipe(bs.stream({ match: '**/*.css' }));
-}
+/**
+ * Images - processes image files
+ * -------------------------------------------------------------------------- */
+const images = series(imagine);
+export const buildImages = series(cleanImages, images);
+buildImages.displayName = 'build:images';
+buildImages.description = 'Build only images files';
 
-export function images () {
-  log(`${green('-> Optimizing images...')}`);
+/**
+ * Templates - processes templates files
+ * -------------------------------------------------------------------------- */
+const pages = series(lintPages, pagile);
+export const buildPages = series(cleanPages, pages);
+buildPages.displayName = 'build:pages';
+buildPages.description = 'Build only html files';
 
-  return src(['src/images/**/*'])
-    .pipe(dest('dist/images'))
-    .pipe(bs.stream({ match: '**/*.{gif,jpg,jpeg,png,svg}' }));
-}
+/**
+ * Watch and Serve - watch files for changes and reload
+ * Starts a BrowerSync instance
+ * Watch files for changes
+ * -------------------------------------------------------------------------- */
+export { serve };
 
-export function pages () {
-  log(`${green('-> Generating Pages via Pug...')}`);
-
-  return src(['src/pug/**/*.pug', '!src/pug/**/_*.pug'])
-    .pipe(pug({ pretty: true }))
-    .pipe(dest('dist'))
-    .pipe(bs.stream({ match: '**/*.html' }));
-}
-
-export function watcher () {
-  log(`${green('-> Watch files for changes...')}`);
-
-  watch('src/pug/**/*', optsWatch, parallel('pages'));
-  watch('src/images/**/*', optsWatch, parallel('images'));
-  watch('src/scss/**/*', optsWatch, parallel('styles'));
-}
-
-export function serve () {
-  log(`${green('-> Serve files to browser...')}`);
-
-  bs.init({
-    server: {
-      baseDir: 'dist'
-    },
-    port: 2222,
-    logPrefix: 'Blocks',
-    ui: false
-  });
-}
-
-export const build = series(clean, styles, images, pages);
-
-const dev = series(
-  build,
-  parallel(serve, watcher)
+/**
+ * Define `build` task - generate files for production
+ * Builds the documentation and framework files
+ * -------------------------------------------------------------------------- */
+export const build = series(
+  clean, styles, scripts, images, pages
 );
+
+/**
+ * Define `dev` task - build, edit source, reload
+ * Runs all of the above tasks and then waits for files to change
+ * -------------------------------------------------------------------------- */
+const dev = series(
+  build, serve
+);
+
+/**
+ * Define default task that can be called by just running `gulp` from cli
+ * This is the default task and it does certain things
+ * -------------------------------------------------------------------------- */
 export default dev;
