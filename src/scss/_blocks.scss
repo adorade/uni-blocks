@@ -1,0 +1,127 @@
+//
+// Blocks
+// =============================================================================
+
+.uni-block {
+  position: relative;
+  padding: $block-padding 0;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-color: $white;
+  color: $font-color;
+  font-family: Roboto, sans-serif;
+  font-size: $font-size;
+  line-height: $line-height;
+  @include font-smoothing(on);
+  text-rendering: optimizeLegibility;
+
+  &.uni-viewport {
+    min-height: calc(100% - 2 * #{$block-padding});
+
+    .container {
+      min-height: calc(100% - 2 * #{$block-padding});
+    }
+  }
+
+  &.uni-image-bg {
+    color: mix($black, $white, 5%);
+  }
+
+  .uni-box {
+    padding: 60px 40px;
+    overflow: hidden;
+    background: $white;
+    color: $font-color;
+    @include border-radius(4px);
+    @include uni-box-shadow(1);
+  }
+
+  .uni-touch {
+    border-top: solid 5px $primary-color;
+  }
+
+  // Headings
+  @each $h, $v in $headings {
+    #{$h}, .text-#{$h} { // stylelint-disable-line
+      margin-top: .3em;
+      margin-bottom: .5em;
+      font-size: $v;
+      font-weight: 400;
+    }
+  }
+
+  .font-weight-light {
+    font-weight: 300;
+  }
+
+  img {
+    @include border-radius(4px);
+
+    + p, + h3, + h4 { // stylelint-disable-line
+      margin-top: 20px;
+    }
+
+    + h1, + h2 { // stylelint-disable-line
+      margin-top: 40px;
+    }
+  }
+
+  .col-fill-left {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 50%;
+    background-position: center;
+    background-size: cover;
+
+    + div {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  .col-fill-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    width: 50%;
+    background-position: center;
+    background-size: cover;
+
+    + div {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  img.uni-icon { // stylelint-disable-line
+    width: auto;
+    width: 60px;
+  }
+
+  img.uni-icon-round { // stylelint-disable-line
+    width: auto;
+    width: 60px;
+    @include border-radius(60px);
+  }
+
+  .row-100 {
+    width: 100%;
+    height: 100px;
+  }
+
+  .row-50 {
+    width: 100%;
+    height: 50px;
+  }
+
+  .row-70 {
+    width: 100%;
+    height: 70px;
+  }
+}
