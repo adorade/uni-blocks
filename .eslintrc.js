@@ -33,24 +33,23 @@ module.exports = {
     "no-multiple-empty-lines": ["error", { max: 2, maxEOF: 1, maxBOF: 1 }],
     "no-trailing-spaces": "error",
     quotes: ["error", "single", { avoidEscape: true }],
-    semi: ["error", "never"]
+    semi: ["error", "always"],
   },
-  "overrides": [
+  overrides: [
     {
-      "files": [
+      files: [
         "gulpfile.esm.js",
         "tools/**/*.js"
       ],
-      "rules": {
-        "semi": ["error", "always"],
+      rules: {
         "space-before-function-paren": "error"
       }
     },
     {
-      "files": [
+      files: [
         "tools/**/*.js"
       ],
-      "rules": {
+      rules: {
         "comma-dangle": "off"
       }
     }
