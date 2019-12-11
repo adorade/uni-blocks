@@ -7,7 +7,7 @@
 import { series } from './tools/util';
 import {
   checks, clean, cleanStyles, lintSCSS, compile, minifyCSS, cleanScripts, lintJS, copyJS,
-  cleanPages, lintPages, pagile, cleanImages, imagine, serve
+  cleanImages, imagine, cleanPages, lintPages, pagile, cleanBlocks, blocks, screenshots, serve
 } from './tools';
 
 /**
@@ -51,6 +51,14 @@ const pages = series(lintPages, pagile);
 export const buildPages = series(cleanPages, pages);
 buildPages.displayName = 'build:pages';
 buildPages.description = 'Build only html files';
+
+/**
+ * Blocks - processes blocks files
+ * -------------------------------------------------------------------------- */
+const dblocks = series(lintPages, blocks, screenshots);
+export const buildBlocks = series(cleanBlocks, dblocks);
+buildBlocks.displayName = 'build:blocks';
+buildBlocks.description = 'Build only blocks files';
 
 /**
  * Watch and Serve - watch files for changes and reload

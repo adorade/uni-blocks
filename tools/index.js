@@ -11,4 +11,5 @@ export {
   cleanScripts, lintJS, copyJS,                       // Scripts
   cleanImages, imagine,                               // Images
   cleanPages, lintPages, pagile,                      // Pages
+  cleanBlocks, blocks, screenshots,                   // Blocks
   serve } from './tasks';                             // Serve and Watch

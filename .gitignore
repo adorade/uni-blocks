@@ -2,6 +2,7 @@
 # Folders to ignore
 dist
 node_modules
+screenshots
 
 # To do Tasks
 .todo

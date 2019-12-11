@@ -43,6 +43,9 @@ export const opts = {
     doctype: 'html',
     pretty: '  '
   },
+  blocks: {
+    pretty: '  '
+  },
   size: {
     gzip: true,
     showFiles: true
