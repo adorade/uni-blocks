@@ -32,6 +32,10 @@ export const paths = {
     dest: `${dirs.dest}/`,
     del: `${dirs.dest}/*.html`
   },
+  blocks: {
+    src: `${dirs.src}/views/includes/**/*.pug`,
+    dest: `${dirs.dest}/blocks/`
+  },
   logs: {
     cli: `${dirs.logs}/cli/`,
     gulp: `${dirs.logs}/gulp/`

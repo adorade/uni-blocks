@@ -35,4 +35,8 @@ export const del = require('del');
 
 // For fancy log and colors in console
 export const log = require('fancy-log');
-export { green, magenta, red, bgBlue, bgRed } from 'ansi-colors';
+export { cyan, green, magenta, red, bgBlue, bgRed } from 'ansi-colors';
+
+// Use for screenshots
+import puppeteer from 'puppeteer';
+export { puppeteer };

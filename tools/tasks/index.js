@@ -10,4 +10,5 @@ export { cleanStyles, lintSCSS, compile, minifyCSS } from './styles';   // Style
 export { cleanScripts, lintJS, copyJS } from './scripts';               // Scripts
 export { cleanImages, imagine } from './images';                        // Images
 export { cleanPages, lintPages, pagile } from './pages';                // Pages
+export { cleanBlocks, blocks, screenshots } from './blocks';            // Blocks
 export { serve } from './serve';                                        // Serve and Watch
