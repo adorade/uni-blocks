@@ -29,7 +29,7 @@ export function imagine () {
   })
     .pipe($.imagemin([
       $.imagemin.gifsicle(opts.images.gif),
-      $.imagemin.jpegtran(opts.images.jpeg),
+      $.imagemin.mozjpeg(opts.images.jpeg),
       $.imagemin.optipng(opts.images.png),
       $.imagemin.svgo(opts.images.svg)
     ], opts.images.general))
