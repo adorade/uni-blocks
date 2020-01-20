@@ -5,7 +5,7 @@
  * ========================================================================== */
 
 import {
-  src, dest, lastRun, plugins, paths, opts, bs, del, log, magenta, green
+  src, dest, lastRun, $, bs, green, magenta, paths, opts
 } from '../util';
 
 // For debugging usage:
@@ -14,31 +14,31 @@ import {
 // Generating HTML from templates and content files
 // -----------------------------------------------------------------------------
 export function cleanPages () {
-  log(`${green('-> Clean all pages')} in ${magenta(paths.views.dest)} folder`);
+  $.log(`${green('-> Clean all pages')} in ${magenta(paths.views.dest)} folder`);
 
-  return del(paths.views.del);
+  return $.del(paths.views.del);
 }
 cleanPages.displayName = 'clean:pages';
 cleanPages.description = 'Clean up html files';
 
 export function lintPages () {
-  log(`${green('-> Linting templates...')}`);
+  $.log(`${green('-> Linting templates...')}`);
 
   return src(paths.views.all, {
     since: lastRun(lintPages)
   })
-    .pipe(plugins.pugLinter({ reporter: 'default' }))
-    .pipe(plugins.pugLinter({ failAfterError: true }));
+    .pipe($.pugLinter({ reporter: 'default' }))
+    .pipe($.pugLinter({ failAfterError: true }));
 }
 lintPages.displayName = 'lint:pages';
 lintPages.description = 'Lint pug (views) files';
 
 export function pagile () {
-  log(`${green('-> Generating Pages via Pug...')}`);
+  $.log(`${green('-> Generating Pages via Pug...')}`);
 
   return src(paths.views.src)
-    .pipe(plugins.pug(opts.pug))
-    .pipe(plugins.size(opts.size))
+    .pipe($.pug(opts.pug))
+    .pipe($.size(opts.size))
     .pipe(dest(paths.views.dest))
     .pipe(bs.stream({ match: '**/*.html' }));
 }

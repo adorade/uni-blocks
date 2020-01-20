@@ -18,7 +18,7 @@ export { checks };
 /**
  * Clean - clean all files from 'dist' folder
  * -------------------------------------------------------------------------- */
-export {  clean };
+export { clean };
 
 /**
  * Styles - processes style files

@@ -4,7 +4,7 @@
  * Licensed under MIT
  * ========================================================================== */
 
-import { fs, log, cyan, green, magenta, red, puppeteer } from './';
+import { $, fs, cyan, green, magenta, red, puppeteer } from './';
 
 function delay (timeout) {
   return new Promise(resolve => {
@@ -59,7 +59,7 @@ async function makeScreenshotsByName (name, selector) {
       quality: 100,
     });
 
-    log(`Saved screenshot for '${cyan(name)}' to '${magenta(path)}'`);
+    $.log(`Saved screenshot for '${cyan(name)}' to '${magenta(path)}'`);
   }
 
   await browser.close();
@@ -69,9 +69,9 @@ export async function makeScreenshots (description, selector) {
   for (var i = 0; i < description.length; i++) {
     try {
       await makeScreenshotsByName(description[i], selector);
-      log(`${magenta('Screenshots')} for ${cyan(description[i])} ... ${green('DONE!')}`);
+      $.log(`${magenta('Screenshots')} for ${cyan(description[i])} ... ${green('DONE!')}`);
     } catch(e) {
-      log.error(`Error in capturing blocks for ${cyan(description[i])}: ${red(e)}`);
+      $.log.error(`Error in capturing blocks for ${cyan(description[i])}: ${red(e)}`);
       process.exit(1);
     }
   }

@@ -27,7 +27,7 @@ export const paths = {
   },
   views: {
     // Ignore files that start with '_'
-    src: [`${dirs.src}/views/**/*.pug`, '!**/_*.pug'],
+    src: [ `${dirs.src}/views/**/*.pug`, '!**/_*.pug' ],
     all: `${dirs.src}/views/**/*.pug`,
     dest: `${dirs.dest}/`,
     del: `${dirs.dest}/*.html`
