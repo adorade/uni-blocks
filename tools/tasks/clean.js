@@ -4,14 +4,14 @@
  * Licensed under MIT
  * ========================================================================== */
 
-import { dirs, del, log, magenta, green } from '../util';
+import { dirs, $, magenta, green } from '../util';
 
 // Clean all output folder
 // -----------------------------------------------------------------------------
 export function clean () {
-  log(`${green('-> Clean all files')} in ${magenta(dirs.dest)} folder`);
+  $.log(`${green('-> Clean all files')} in ${magenta(dirs.dest)} folder`);
 
-  return del(dirs.dest);
+  return $.del(dirs.dest);
 }
 clean.displayName = 'clean';
 clean.description = 'Clean all output folder';

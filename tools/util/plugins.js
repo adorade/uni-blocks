@@ -4,11 +4,12 @@
  * Licensed under MIT
  * ========================================================================== */
 
-// Load gulp's API, require gulp v.4
+// Importing specific gulp API
+// functions lets us write them as series() instead of gulp.series()
 export { src, dest, series, parallel, lastRun, watch, tree } from 'gulp';
 
-// Load gulp plugins
-export const plugins = require('gulp-load-plugins')({
+// Load all plugins in "devDependencies" into the variable $
+export const $ = require('gulp-load-plugins')({
   // when set to true, the plugin will log info to console.
   // Useful for bug reporting and issue debugging
   // DEBUG: false,
@@ -16,26 +17,22 @@ export const plugins = require('gulp-load-plugins')({
   // whether the plugins should be lazy loaded on demand
   // lazy: true,
 
-  // pattern: ['*'],
-  scope: ['devDependencies'],
-  // rename: {
-  //   'gulp-stylelint': 'gStylelint',
-  //   'gulp-eslint': 'gEslint',
-  //   'gulp-pug-linter': 'pugLinter'
-  // },
-
-  // Multiple `config` locations
-  // config: `${process.cwd()}/package.json`
+  pattern: [ '*' ],
+  scope: [ 'devDependencies' ],
+  rename: {
+    'fancy-log': 'log',
+    'gulp-stylelint': 'gStylelint',
+    'gulp-eslint': 'gEslint',
+    'gulp-pug-linter': 'pugLinter'
+  }
 });
 
 // Load others modules
 export const bs = require('browser-sync').create();
 export const fs = require('fs');
-export const del = require('del');
 
-// For fancy log and colors in console
-export const log = require('fancy-log');
-export { cyan, green, magenta, red, bgBlue, bgRed } from 'ansi-colors';
+// Colors for fancy log
+export { bgBlue, bgRed, cyan, green, magenta, red } from 'ansi-colors';
 
 // Use for screenshots
 import puppeteer from 'puppeteer';
