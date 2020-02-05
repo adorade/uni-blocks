@@ -17,9 +17,9 @@
   "homepage": "https://blocks.adorade.ro",
   "repository": "https://github.com/adorade/uni-blocks",
   "dependencies": {
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
-    "popper.js": "^1.16.0"
+    "popper.js": "^1.16.1"
   },
   "devDependencies": {
     "ansi-colors": "4.1.1",
@@ -42,7 +42,7 @@
     "gulp-sass": "4.0.2",
     "gulp-size": "3.0.0",
     "gulp-stylelint": "13.0.0",
-    "puppeteer": "2.1.0",
+    "puppeteer": "2.1.1",
     "stylelint": "13.0.0",
     "stylelint-config-standard": "19.0.0",
     "stylelint-order": "4.0.0",
