@@ -17,16 +17,16 @@
   "homepage": "https://blocks.adorade.ro",
   "repository": "https://github.com/adorade/uni-blocks",
   "dependencies": {
-    "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
-    "popper.js": "^1.16.1"
+    "bootstrap": "4.5.0",
+    "jquery": "3.5.1",
+    "popper.js": "1.16.1"
   },
   "devDependencies": {
     "ansi-colors": "4.1.1",
     "babel-eslint": "10.1.0",
     "browser-sync": "2.26.7",
     "del": "5.1.0",
-    "eslint": "6.8.0",
+    "eslint": "7.0.0",
     "esm": "3.2.25",
     "fancy-log": "1.3.3",
     "gulp": "4.0.2",
@@ -42,11 +42,11 @@
     "gulp-sass": "4.1.0",
     "gulp-size": "3.0.0",
     "gulp-stylelint": "13.0.0",
-    "puppeteer": "3.0.2",
+    "puppeteer": "3.0.4",
     "stylelint": "13.3.3",
     "stylelint-config-standard": "20.0.0",
     "stylelint-order": "4.0.0",
-    "stylelint-scss": "3.17.1"
+    "stylelint-scss": "3.17.2"
   },
   "license": "MIT"
 }
