@@ -42,7 +42,7 @@
     "gulp-sass": "4.1.0",
     "gulp-size": "3.0.0",
     "gulp-stylelint": "13.0.0",
-    "puppeteer": "5.1.0",
+    "puppeteer": "5.2.0",
     "stylelint": "13.6.1",
     "stylelint-config-standard": "20.0.0",
     "stylelint-order": "4.1.0",
