@@ -17,7 +17,7 @@
   "homepage": "https://blocks.adorade.ro",
   "repository": "https://github.com/adorade/uni-blocks",
   "dependencies": {
-    "bootstrap": "4.5.0",
+    "bootstrap": "4.5.2",
     "jquery": "3.5.1",
     "popper.js": "1.16.1"
   },
