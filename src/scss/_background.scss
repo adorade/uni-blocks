@@ -3,8 +3,12 @@
 // =============================================================================
 
 .bg-dark {
-  background-color: #2d313c;
+  background-color: #2d313c !important; // stylelint-disable-line
   color: mix($black, $white, 5%);
+
+  a {
+    color: mix($black, $white, 5%);
+  }
 }
 
 .bg-gray {
