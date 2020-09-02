@@ -1,7 +1,6 @@
 //
 // Typo
 // =============================================================================
-// stylelint-disable declaration-no-important
 
 .br {
   @include border-radius(4px);
@@ -17,8 +16,8 @@
   font-weight: 900;
 }
 
-*.text-light {
-  font-weight: 300 !important;
+.text-light {
+  font-weight: 300 !important; // stylelint-disable-line
 }
 
 .sl-1 {

@@ -5,7 +5,7 @@
  * ========================================================================== */
 
 import {
-  lintSCSS, compile, lintJS, copyJS, lintPages, pagile, imagine
+  lintSCSS, compile, minifyCSS, lintJS, copyJS, lintPages, pagile, imagine
 } from './';
 import {
   series, watch, dirs, paths, opts, $, bs,
@@ -36,7 +36,7 @@ export function serve (done) {
     {
       name: 'Styles',
       paths: paths.styles.src,
-      tasks: [lintSCSS, compile]
+      tasks: [lintSCSS, compile, minifyCSS]
     },
     {
       name: 'Scripts',
