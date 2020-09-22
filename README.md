@@ -2,11 +2,7 @@
 
 [![GitHub version](https://img.shields.io/github/package-json/v/adorade/uni-blocks.svg?label=&color=green&logo=github)](https://github.com/adorade/uni-blocks/blob/master/package.json)
 [![license](https://img.shields.io/github/license/adorade/uni-blocks.svg?label=)](https://mit-license.org)
-[![website](https://img.shields.io/website/https/blocks.adorade.ro.svg?logo=google-chrome)](https://blocks.adorade.ro/)
 [![devDependencies Status](https://img.shields.io/david/dev/adorade/uni-blocks.svg?label=deps)](https://david-dm.org/adorade/uni-blocks?type=dev)
-[![Travis (.com)](https://img.shields.io/travis/com/adorade/uni-blocks?logo=travis)](https://travis-ci.com/adorade/uni-blocks)
-[![renovate badge](https://badges.renovateapi.com/github/adorade/uni-blocks)](https://renovateapp.com)
-[![GitHub Actions status](https://github.com/adorade/uni-blocks/workflows/Node%20CI/badge.svg)](https://github.com/adorade/uni-blocks/actions)
 
 This is the [website](https://blocks.adorade.ro/) of the project.
 
